@@ -1,0 +1,26 @@
+name: Deploy K8s Resources
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Login to WSL2 SSH
+        uses: appleboy/shh-action@v1.0.3
+        with:
+          ssh-host: ${{ secrets.WSL2_SSH_PUBLIC_KEY }}
+          ssh-username: pbarysiuk
+          ssh-port: 8228
+          ssh-private-key: ${{ secrets.WSL2_SSH_PRIVATE_KEY }}
+
+      - name: Terraform init and apply
+        run: |
+          terraform init
+          terraform apply --auto-approve
