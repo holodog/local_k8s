@@ -3,7 +3,7 @@ name: Deploy K8s Resources
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
