@@ -1,0 +1,7 @@
+  grafana:
+    grafana.ini:
+      server:
+        #domain: grafana.org.ai
+        #root_url: "%(protocol)s://%(domain)s/"
+        root_url: https://k8s.dev/grafana/
+        serve_from_sub_path: true
