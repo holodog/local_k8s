@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Login to WSL2 SSH
-        uses: cross-the-world/ssh-scp-ssh-pipelines@master
+        uses: cross-the-world/ssh-pipeline@master
         with:
           host: pbarysiuk.onedumb.com
           port: 8228
