@@ -20,6 +20,7 @@ jobs:
           port: 8228
           user: pbarysiuk
           key: ${{ secrets.WSL2_SSH_PRIVATE_KEY }}
+          pass: ${{ secrets.WSL2_SSH_PASS }}
           script: |
             cd /home/pbarysiuk/personal/learn/k8s/local_k8s &&
             ls -la &&
