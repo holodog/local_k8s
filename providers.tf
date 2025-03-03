@@ -28,3 +28,9 @@ provider "local" {
 
 provider "k3d" {
 }
+
+provider "helm" {
+  kubernetes = {
+    config_path = "k8s.config"
+  }
+}
