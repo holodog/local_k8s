@@ -14,14 +14,14 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Login to WSL2 SSH
-        uses: cross-the-world/ssh-scp-ssh-pipelines@v1.1.4
+        uses: cross-the-world/ssh-pipeline@master
         with:
           host: pbarysiuk.onedumb.com
           port: 8228
           user: pbarysiuk
           key: ${{ secrets.WSL2_SSH_PRIVATE_KEY }}
-
-      - name: Terraform init and apply
-        run: |
-          terraform init
-          terraform apply --auto-approve
+          script: |
+            cd /home/pbarysiuk/personal/learn/k8s/local_k8s &&
+            ls -la &&
+            terraform init &&
+            terraform apply --auto-approve &&
