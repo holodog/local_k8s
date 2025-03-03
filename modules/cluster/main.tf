@@ -72,8 +72,3 @@ resource "k3d_cluster" "k8s_dev" {
     switch_current_context    = true
   }
 }
-
-resource "local_file" "kubeconfig" {
-  content  = k3d_cluster.k8s_dev.kubeconfig
-  filename = "${path.root}/k8s.config"
-}
