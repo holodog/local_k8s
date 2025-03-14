@@ -19,7 +19,7 @@ jobs:
           host:       pbarysiuk.onedumb.com
           port:       8228
           username:   pbarysiuk
-          key:        ${{ secrets.WSL2_SSH_PRIVATE_KEY }}
+          key:        ${{ secrets.WSL2_SSH_PUBLIC_KEY }}
           passphrase: ${{ secrets.WSL2_SSH_PASS }}
           script: |
             cd /home/pbarysiuk/personal/learn/k8s/local_k8s &&
