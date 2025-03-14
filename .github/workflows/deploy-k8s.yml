@@ -1,7 +1,7 @@
 name: Deploy K8s Resources
 
 on:
-  push:
+  pull_request:
     branches:
       - main
   workflow_dispatch:
