@@ -19,10 +19,9 @@ jobs:
           host:       pbarysiuk.onedumb.com
           port:       8228
           username:   pbarysiuk
-          key:        ${{ secrets.WSL2_SSH_PRIVATE_KEY }}
-          passphrase: ${{ secrets.WSL2_SSH_PASS }}
+          key:        ${{ secrets.WSL2_SSH_PUBLIC_KEY }}
           script: |
-            cd /home/pbarysiuk/personal/learn/k8s/local_k8s &&
-            ls -la &&
-            terraform init &&
-            terraform apply --auto-approve &&
+            cd /home/pbarysiuk/personal/learn/k8s/local_k8s
+            ls -la
+            terraform init
+            terraform apply --auto-approve
