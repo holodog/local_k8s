@@ -16,9 +16,9 @@ module "cluster" {
 #   depends_on = [module.cluster]
 # }
 
-module "monitoring" {
-  source = "./modules/monitoring"
-}
+# module "monitoring" {
+#   source = "./modules/monitoring"
+# }
 
 # module "httpbin" {
 #   source = "./modules/httpbin"
@@ -30,8 +30,8 @@ module "monitoring" {
 #   depends_on = [module.cluster]
 # }
 
-# resource "local_file" "k8s_dev_kubeconfig" {
-#   filename   = "k8s_dev"
-#   content    = module.cluster.credentials[0].raw
-#   depends_on = [module.cluster]
-# }
+resource "local_file" "k8s_dev_kubeconfig" {
+  filename   = "k8s_dev"
+  content    = module.cluster.credentials[0].raw
+  depends_on = [module.cluster]
+}
