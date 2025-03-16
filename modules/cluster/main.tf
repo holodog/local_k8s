@@ -1,16 +1,16 @@
-resource "k3d_cluster" "k8s_dev" {
-  name    = "k8s.dev"
+resource "k3d_cluster" "k3d_cluster" {
+  name    = "k3d.${var.domain}"
   servers = 1
   agents  = 1
 
   kube_api {
-    host      = "k8s.dev"
+    host      = "k3d.${var.domain}"
     host_ip   = "0.0.0.0"
     host_port = 6445
   }
 
   image   = "rancher/k3s:v1.27.1-k3s1"
-  network = "my-custom-net"
+  network = "k3d_net"
   token   = "superSecretToken"
 
   volume {

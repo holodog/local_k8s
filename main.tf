@@ -1,5 +1,6 @@
 module "cluster" {
   source = "./modules/cluster"
+  domain = var.domain
 }
 
 # module "cf_tunnel" {
