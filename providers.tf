@@ -2,11 +2,15 @@ terraform {
   required_providers {
     k3d = {
       source  = "pvotal-tech/k3d"
-      version = "0.0.7"
+      version = "~> 0.0.7"
+    }
+    digitalocean = {
+      source  = "digitalocean/digitalocean"
+      version = "~> 2.0"
     }
     local = {
       source  = "hashicorp/local"
-      version = "2.5.1"
+      version = "~> 2.5.1"
     }
     helm = {
       source  = "hashicorp/helm"
@@ -16,10 +20,10 @@ terraform {
       source  = "gavinbunney/kubectl"
       version = "~> 1.7.0"
     }
-    cloudflare = {
-      source  = "cloudflare/cloudflare"
-      version = "~> 4.26.0"
-    }
+    # cloudflare = {
+    #   source  = "cloudflare/cloudflare"
+    #   version = "~> 4.26.0"
+    # }
     kubernetes = {
       source  = "hashicorp/kubernetes"
       version = "~> 2.36.0"
